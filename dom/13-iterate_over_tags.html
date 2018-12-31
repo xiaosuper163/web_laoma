@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="cityList">
+        <li>Vancouver</li>
+        <li>Toronto</li>
+        <li>Ontario</li>
+        <li>Victoria</li>
+        <li>Burnaby</li>
+    </ul>
+
+    <script>
+
+        var li_list = document.querySelectorAll("li");
+        
+        // this is not memory efficient.
+        /*
+        li_list.forEach(function (element, index) {
+            element.onclick = function () {
+                alert(this.innerHTML);
+            };
+        });
+        */
+
+        function liOnclickHandler() {
+            alert(this.innerHTML);
+        }
+
+        li_list.forEach(function (element, index) {
+            element.onclick = liOnclickHandler;
+        });
+
+    </script>
+</body>
+
+</html>
