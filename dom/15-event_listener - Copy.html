@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid purple;
+        }
+
+        .parent {
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+        .child {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="button" id="btn" value="clickme" />
+
+    <script>
+
+        var btn = document.querySelector("#btn");
+
+        // onclick -> bubbling stage, cannot bind with multiple events
+
+        // add event listener: we are able to bind it with multiple events
+        // event type, event function, is capturing stage or bubbling stage
+        btn.addEventListener('click', function () { alert('The button is being clicked!'); }, false);
+
+        // capturing stage: parent first, then child
+        // bubbling stage: child first, then parent
+
+    </script>
+</body>
+
+</html>

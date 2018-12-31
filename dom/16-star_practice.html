@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px dotted purple;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <span class="wjx" id="star-1">☆</span>
+        <span class="wjx" id="star-2">☆</span>
+        <span class="wjx" id="star-3">☆</span>
+        <span class="wjx" id="star-4">☆</span>
+        <span class="wjx" id="star-5">☆</span>
+
+        <br />
+
+        <p style="font-size: 20px">How many stars you would like to give to this movie?</p>
+    </div>
+
+    <script>
+        var wjxList = document.querySelectorAll(".wjx");
+        wjxList.forEach(function (element, index) {
+            element.addEventListener("click", function () {
+                wjxList.forEach(function (element, index) {
+                    element.innerHTML = '☆';
+                });
+                element.innerHTML = '★';
+            }, true);
+        });
+        
+
+    </script>
+</body>
+
+</html>
