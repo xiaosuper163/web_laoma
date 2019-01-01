@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // onload function will be executed after all the content has been loaded
+        // otherwise the script must be placed after the html content
+        // however, sometimes this is unecessary
+        window.onload = function () {
+
+            window.onbeforeunload = function () {
+                // chrome won't show this message, IE will.
+                return "Are you leaving this website?";
+            }
+
+            var btnSubmit = document.getElementById("btnSubmit");
+            var userName = document.getElementById("userName");
+
+            btnSubmit.onclick = function (e) {
+                if (!userName.value) {
+                    alert("The username is required.");
+                    // cancel bubbling, only work for dom0
+                    return false;
+                }
+            };
+        }
+
+    </script>
+    <form action="https://www.google.ca">
+        <label for="userName">Username</label>
+        <input type="text" id="userName" />
+        <hr>
+        <input type="submit" value="Submit" id="btnSubmit">
+
+    </form>
+</body>
+
+</html>
