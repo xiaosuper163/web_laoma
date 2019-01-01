@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css priority demo</title>
+
+    <!-- priority: default < inheritance = externel link < style in header < style as attribute 
+    This doesn't apply to <a>.
+    style as attribute > ID > class > mark > inheritance > default
+    !important has the highest priority-->
+    <link rel="stylesheet" href="./css/13.css">
+    <style>
+        body {
+            color:magenta;
+        }
+
+        p {
+            color: red;
+            background-color: sienna;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+    <p>Trump decided hastily to remove Mattis in reaction to negative news coverage, according to senior administration
+        officials, one of whom said the president was eager to retaliate against Mattis and show up the widely
+        respected former general. Another official said Trump and other advisers suspected Mattis of being part of a
+        campaign to stoke negative coverage about the president.</p>
+
+    <p>After cancelling his Christmas trip to Florida in view of the partial government shutdown, Trump was marooned
+        this weekend at the White House, watching hours of cable television news shows. Advisers said he stewed over
+        commentary hailing Mattis as heroic — a human guardrail against the president’s impulses.</p>
+
+    <p>Trump was so angry with Mattis that on Sunday morning he directed Secretary of State Mike Pompeo to inform the
+        defence secretary that he was being removed from office two months early, according to a senior administration
+        official. Trump himself has not spoken to Mattis since last Thursday, when the secretary resigned.</p>
+
+    <p>Mattis resigned in protest after Trump announced the withdrawal of U.S. troops from Syria over the strong
+        objections of Mattis and others on the national security team. Brett McGurk, the top U.S. envoy to the
+        international coalition fighting Daesh (also known as ISIS), also resigned in protest over Trump’s Syria
+        decision.</p>
+</body>
+
+</html>

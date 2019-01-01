@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>1ppppppp</p>
+    <p>2ppppppp</p>
+    <p>3ppppppp</p>
+    <p>4ppppppp</p>
+    <p>5ppppppp</p>
+
+    <script>
+        var pArray = document.getElementsByTagName('p');
+        console.dir(pArray);
+        console.dir(pArray[0]);
+        //pArray -> HTMLCollection -> Object
+
+        // print out the body of between p tags
+        for (var i=0; i<pArray.length; i++) {
+            console.log(pArray[i].innerHTML);
+        }
+    </script>
+</body>
+</html>

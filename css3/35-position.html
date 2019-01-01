@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        div,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            border: 1px solid purple;
+        }
+
+        div[class="outer"] {
+            width: 800px;
+            height: 500px;
+            position: relative;
+        }
+
+        /* .outer::after, .outer::before {
+        content: " ";
+        display: table;
+    }
+
+    .outer::after {
+        clear:both;
+    } */
+
+        div[class="rp"] {
+            width: 300px;
+            height: 300px;
+
+            /* relative position */
+            position: relative;
+
+            /* we can set up top left right bottom after setting the position to relative. */
+            top: 20px;
+            left: 10px;
+        }
+
+        div[class="ap"] {
+            width: 300px;
+            height: 300px;
+
+            /* absolute position */
+            position: absolute;
+
+            left: 100px;
+            top: 20px;
+        }
+
+        .fp {
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: aquamarine;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+
+        <div class="fp">
+            fixed position
+        </div>
+
+    </div>
+
+
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+    </div>
+
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+    </div>
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+    </div>
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+    </div>
+    <div class="outer">
+        <div class="rp">
+            top 20px left 10px
+        </div>
+
+        <div class='ap'>
+            top 20px left 100px
+        </div>
+    </div>
+</body>
+
+</html>

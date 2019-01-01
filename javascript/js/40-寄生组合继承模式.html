@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Animal(age, name) {
+            this.age = age;
+            this.name = name;
+            this.foods = ['banana', 'apple'];
+        }
+
+        Animal.prototype.run = function() {
+            console.log(this.name + " is running!");
+        }
+
+        function Cat(age, name) {
+            Animal.call(this, age, name);
+        }
+
+        function object(o) {
+            function F() {}
+            F.prototype = o;
+            return new F();
+        }
+
+        function inheritFrom(o) {
+            var t = object(o);
+            t.constructor = Cat;
+            return t;
+        }
+
+        Cat.prototype = inheritFrom(Animal.prototype);
+
+        c1 = new Cat(100, "kimi");
+
+        c1.run();
+    </script>
+</body>
+</html>

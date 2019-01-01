@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var exp1 = new RegExp('\\d+', 'g');
+
+        var exp2 = /\d+/;
+
+        console.log(exp1.test("123abc456"));
+        
+        var str = "1392945632000,mss,Date(1392945632000)";
+
+        var res = str.replace(/.*Date\((\d+)\)/g, '$1');
+        var res = new Date(parseInt(res));
+
+        console.log(res);
+
+        var res = str.replace(/.*Date\((\d+)\)/g, 'new Date ($1)');
+        var res = eval(res);
+
+        console.log(res);
+
+    </script>
+</body>
+</html>
