@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input type="button" value="add one more item" id="btn" />
+        <ul class="dynamic_list">
+
+        </ul>
+    </div>
+
+    <script>
+        var btn = document.querySelector("#btn");
+        var num_item = 0;
+        btn.addEventListener("click", function () {
+            var dynamic_list = document.querySelector(".dynamic_list");
+            dynamic_list.innerHTML += '<li>' + (++num_item) + '</li>';
+        }, true);
+
+    </script>
+</body>
+
+</html>
