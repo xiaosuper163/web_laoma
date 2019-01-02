@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html, body, div, ul, li, input {
+            margin:0;
+            padding:0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .searchBox {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            padding-top: 30px;
+            line-height: 25px;
+            font-family: Arial;
+            position: relative;
+        }
+
+        .searchText {
+            width: 191px;
+            height: 25px;
+            padding-left: 5px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+        }
+
+        .historySearchText {
+            width: 198px;            
+            border: 1px solid rgb(231, 231, 224);
+            display: none;
+            position: absolute;
+        }
+
+        .searchBox .historySearchText li {
+            height: 25px;
+            line-height: 25px;
+            padding-left: 5px;
+        }
+
+        .searchBox .historySearchText li:hover {
+            background-color:lightgrey;
+            cursor: pointer;
+            background-position-x: -5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="searchBox">
+        <input type="text" class="searchText">
+        <ul class="historySearchText">
+            <li>History Search Text 1</li>
+            <li>History Search Text 2</li>
+            <li>History Search Text 3</li>
+            <li>History Search Text 4</li>
+            <li>History Search Text 5</li>
+        </ul>
+
+
+    </div>
+    <p>The Dota series began in 2003 with Defense of the Ancients (DotA)—a mod for Blizzard Entertainment's
+        Warcraft III: Reign of Chaos—created by the pseudonymous designer "Eul".[33] An expansion pack for Warcraft
+        III, titled The Frozen Throne, was released later that year; a series of Defense of the Ancients clone mods
+        for the new game competed for popularity. DotA: Allstars by Steve Feak was the most successful,[34] and
+        Feak, with his friend Steve Mescon, created the official Defense of the Ancients community website and the
+        holding company DotA-Allstars, LLC.[35] When Feak retired from DotA: Allstars in 2005, a friend, under the
+        pseudonym "IceFrog", became its lead designer.[36] By the late 2000s, Defense of the Ancients became one of
+        the most popular mods in the world, as well as a prominent esports title.[37] IceFrog and Mescon later had
+        a falling out in May 2009, which prompted the former to establish a new community website at
+        playdota.com.[38] Valve's interest in the Defense of the Ancients property began when several veteran
+        employees, including Team Fortress 2 designer Robin Walker and executive Erik Johnson, became fans of the
+        mod and wanted to build a modern sequel.[39] The company corresponded with IceFrog by email about his
+        long-term plans for the project,[40] and he was subsequently hired to direct a sequel.[41] IceFrog first
+        announced his new position through his blog in October 2009,[42] with Dota 2 being publicly announced by
+        Game Informer a year later.[43]</p>
+
+    <p>
+        Valve adopted the word "Dota", derived from the original mod's acronym, as the name for its newly acquired
+        franchise. Johnson argued that the word referred to a concept, and was not an acronym.[41] Shortly after
+        the announcement of Dota 2, Valve filed a trademark claim to the Dota name.[44] At Gamescom 2011, company
+        president Gabe Newell explained that the trademark was needed to develop a sequel with the
+        already-identifiable brand.[45] Holding the Dota name to be a community asset, Feak and Mescon filed an
+        opposing trademark for "DOTA" on behalf of DotA-Allstars, LLC (then a subsidiary of Riot Games) in August
+        2010.[35] Rob Pardo, the executive vice president of Blizzard Entertainment at the time, similarly stated
+        that the DotA name belonged to the mod's community. Blizzard acquired DotA-Allstars, LLC from Riot Games
+        and filed an opposition against Valve in November 2011, citing Blizzard's ownership of both the Warcraft
+        III World Editor and DotA-Allstars, LLC as proper claims to the franchise.[46] The dispute was settled in
+        May 2012, with Valve retaining commercial franchising rights to the "Dota" intellectual property, while
+        allowing non-commercial use of the name by third-parties.[47] In 2017, Valve's ownership of it was again
+        challenged, after a 2004 internet forum post from Eul was brought to light by a Chinese company known as
+        uCool, who had released a mobile game in 2014 that used characters from the Dota universe.[48] uCool, who
+        was previously involved in a lawsuit with Blizzard in 2015 for similar reasons,[49] along with another
+        Chinese company, Lilith Games, argued that the forum post invalidated any ownership claims of the
+        intellectual property, stating that the Dota property was an open-source, collective work that could not be
+        copyrighted by anyone in particular.[48][50] Judge Charles R. Breyer denied uCool's motion for summary
+        dismissal, but allowed the case to be moved forward to a jury.[48][51]</p>
+    <script>
+        ; (function () {
+
+            window.onload = function () {
+
+                var searchText = document.querySelector(".searchText");
+                var historySearchText = document.querySelector(".historySearchText");
+                searchText.onfocus = function () {
+                    historySearchText.style.display = "block";
+                }
+
+                searchText.onblur = function () {
+                    historySearchText.style.display = "none";
+                }
+
+            };
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html, body, div, ul, li, input {
+            margin:0;
+            padding:0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .searchBox {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            padding-top: 30px;
+            line-height: 25px;
+            font-family: Arial;
+            position: relative;
+        }
+
+        .searchText {
+            width: 191px;
+            height: 25px;
+            padding-left: 5px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+        }
+
+        .historySearchText {
+            width: 198px;            
+            border: 1px solid rgb(231, 231, 224);
+            display: none;
+            position: absolute;
+        }
+
+        .searchBox .historySearchText li {
+            height: 25px;
+            line-height: 25px;
+            padding-left: 5px;
+        }
+
+        .searchBox .historySearchText li:hover {
+            background-color:lightgrey;
+            cursor: pointer;
+            background-position-x: -5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="searchBox">
+        <input type="text" class="searchText">
+        <ul class="historySearchText">
+            <li>History Search Text 1</li>
+            <li>History Search Text 2</li>
+            <li>History Search Text 3</li>
+            <li>History Search Text 4</li>
+            <li>History Search Text 5</li>
+        </ul>
+
+
+    </div>
+    
+    <script>
+        ; (function () {
+
+            window.onload = function () {
+
+                var searchText = document.querySelector(".searchText");
+                var historySearchText = document.querySelector(".historySearchText");
+                searchText.onfocus = function () {
+                    historySearchText.style.display = "block";
+                }
+
+                searchText.onblur = function () {
+                    historySearchText.style.display = "none";
+                }
+
+                var historySearchText = document.querySelector(".historySearchText");
+                var historySearchTextList = historySearchText.getElementsByTagName("li");
+
+                for (var i=0; i<historySearchTextList.length; i++) {
+                    // event order:
+                    // onmousedown -> onfocus -> onmouseup -> onclick
+                    historySearchTextList[i].onmousedown = historySearchTextHandler
+                }
+                function historySearchTextHandler() {
+                    var txt = this.innerHTML;
+                    searchText.value = txt;
+                }
+
+            };
+        })();
+    </script>
+</body>
+
+</html>

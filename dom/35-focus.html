@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <br>
+    <input type="text" id="text2">
+    <script>
+        window.onload = function () {
+            var text1 = document.getElementById("text1");
+            text1.onfocus = function () {
+                console.log(this.id + ' is focused');
+            }
+
+            text1.onblur = function () {
+                console.log(this.id + ' is unfocused');
+            }
+        }
+    </script>
+</body>
+</html>
