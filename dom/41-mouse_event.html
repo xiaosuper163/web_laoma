@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+    <img src="img/corgiswimflip.gif" width="100px" height="100px" alt="" id="mouse_img">
+
+    <script>
+        ;(function(){
+            window.onload = function() {
+                document.onmousemove = function(e) {
+                    e = e || window.event;
+                    // var pageX = e.pageX;
+                    var pageX = e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);
+                    var pageY = e.clientY + (document.documentElement.scrollTop || document.body.scrollTop);
+
+                    var mouse_img = document.getElementById("mouse_img");
+                    mouse_img.style.left = pageX - 50 + "px";
+                    mouse_img.style.top = pageY - 50 + "px";
+                };
+            };
+        })();
+    </script>
+<body>
+</body>
+
+</html>

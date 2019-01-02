@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, div {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: lawngreen;
+            border: 1px solid red;
+            cursor: move;
+        }
+
+        body {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="top: 30px; left: 30px"></div>
+
+    <script>
+        (function() {
+            window.onload = function(e) {
+                e = e || window.event;
+
+                var isMoving = false;
+                var box = document.getElementById("box");
+                var lastX = 0, lastY = 0;
+                box.onmousedown = function(e) {
+                    isMoving = true;
+                    lastX = e.pageX;
+                    lastY = e.pageY;
+                };
+
+                box.onmouseup = function(e) {
+                    isMoving = false;
+                };
+
+                document.onmousemove = function(e) {
+                    if(!isMoving) {
+                        return;
+                    }
+
+                    var distX = e.pageX - lastX;
+                    var distY = e.pageY - lastY;
+                    lastX = e.pageX;
+                    lastY = e.pageY;
+                    box.style.left = parseFloat(box.style.left) + distX + "px";
+                    box.style.top = parseFloat(box.style.top) + distY + "px";
+
+                };
+            };
+        })();
+    </script>
+</body>
+</html>
