@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .subPhoneNumber {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="phoneNumber">
+        Phone number:
+
+        <input class="subPhoneNumber" type="text" name="" id="text1">
+        <input class="subPhoneNumber" type="text" name="" id="text2">
+        <input class="subPhoneNumber" type="text" name="" id="text3">
+        <input type="button" id="btn" value="submit">
+
+    </div>
+
+    <script>
+        (function () {
+            window.onload = function (e) {
+                e = e || window.event;
+                var subPhoneNumbers = document.querySelectorAll(".subPhoneNumber");
+                for (var i = 0; i < subPhoneNumbers.length; i++) {
+                    console.dir(subPhoneNumbers[i]);
+                    (function (j) {
+                        subPhoneNumbers[j].onkeyup = function (e) {
+                            console.log(subPhoneNumbers[j].value.length);
+                            if (subPhoneNumbers[j].value.length == 3) {
+                                if (j <= 1) {
+                                    subPhoneNumbers[j + 1].focus();
+                                } else {
+                                    console.log("fires!")
+                                    document.getElementById("btn").focus();
+                                }
+                            }
+                        };
+                    })(i);
+                }
+            };
+        })();
+    </script>
+</body>
+
+</html>
