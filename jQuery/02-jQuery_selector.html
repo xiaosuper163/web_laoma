@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <input type="button" value="click me" id="btn">
+    <script>
+        // $ Usage:
+        // (1) $(function(){}) callback function which will be called after all the content has been loaded
+        // Alternatively, we can also use $(document.ready(function(){});)
+        // (2) $("#btn") works as a query selector.
+        // Conventionally, we put a $ in the beginning when naming the variable
+        var $btn = $("#btn");
+        console.log($btn);
+
+        var btn = $btn[0];
+        console.dir(btn);
+        // (3) convert a html element into jQuery object
+        var $btn2 = $(btn);
+        console.dir($btn2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+    <style>
+        html, body, div, table, td {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid purple;
+            text-align: center;
+        }
+
+        tr, td {
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>col 1</td>
+            <td>col 2</td>
+            <td>col 3</td>
+        </tr>
+        <tr>
+            <td>abcdefg 1</td>
+            <td>abcdefg 2</td>
+            <td>abcdefg 3</td>
+        </tr>
+        <tr>
+            <td>abcdefg 1</td>
+            <td>abcdefg 2</td>
+            <td>abcdefg 3</td>
+        </tr>
+        <tr>
+            <td>abcdefg 1</td>
+            <td>abcdefg 2</td>
+            <td>abcdefg 3</td>
+        </tr>
+        <tr>
+            <td>abcdefg 1</td>
+            <td>abcdefg 2</td>
+            <td>abcdefg 3</td>
+        </tr>
+    </table>
+
+    <script>
+        $(function() {
+            var $tds = $("tr:odd");
+            // when there are two parameters, we are setting the css style
+            // when there is one parameter, we are retrieving the css style
+            $tds.css("backgroundColor", "#eee");
+            console.log($tds.css("backgroundColor"));
+            console.log($tds.text());
+        });
+    </script>
+</body>
+</html>
