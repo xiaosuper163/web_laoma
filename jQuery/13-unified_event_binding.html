@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <input type="button" value="click me" id="btn">
+    <ul id="list">
+        <li>abcdefg 1</li>
+        <li>abcdefg 2</li>
+        <li>abcdefg 3</li>
+        <li>abcdefg 4</li>
+        <li>abcdefg 5</li>
+        <li>abcdefg 6</li>
+        <li>abcdefg 7</li>
+        <li>abcdefg 8</li>
+        <li>abcdefg 9</li>
+        <li>abcdefg 10</li>
+    </ul>
+    <script>
+        $(function () {
+
+            // add new element into body with dom
+            // var newElement = document.createElement("p");
+            // newElement.innerHTML = 123456;
+            // document.body.appendChild(newElement);
+
+            // add new element into body with jQuery
+            // this is the fourth type of usage of jquery
+            var $newElement = $("<p>123456</p>");
+            $newElement.on("click", function() {
+                console.log("Clicked!");
+            });
+            $("body").append($newElement);
+            
+            $("#btn").on("click", function(e) {
+                console.log("Button clicked!");
+            });
+
+            $("#list").on("click", "li", function(e) {
+                console.log("Item clicked!");
+                console.log(this.innerHTML);
+                console.log($(this).html());
+                console.log($(this).text());
+                console.log($(this).val());
+            });
+        });
+    </script>
+</body>
+
+</html>

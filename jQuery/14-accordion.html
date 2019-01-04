@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+    <style>
+        html, body, ul, li, div {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .item-hd {
+            background-color: #cfcfcf;
+            cursor: pointer;
+        }
+
+        .item-hd, .item-bd {
+            height: 25px;
+            line-height: 25px;
+            border: 1px solid purple;
+        }
+
+        ul li .item-bd {
+            height: 150px;
+            display: none;
+        }
+
+        ul .on .item-bd {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="ac-item">
+            <div class="item-hd">Title 1</div>
+            <div class="item-bd">Body 1</div>
+        </li>
+        <li class="ac-item">
+            <div class="item-hd">Title 2</div>
+            <div class="item-bd">Body 2</div>
+        </li>
+        <li class="ac-item">
+            <div class="item-hd">Title 3</div>
+            <div class="item-bd">Body 3</div>
+        </li>
+        <li class="ac-item">
+            <div class="item-hd">Title 4</div>
+            <div class="item-bd">Body 4</div>
+        </li>
+        <li class="ac-item">
+            <div class="item-hd">Title 5</div>
+            <div class="item-bd">Body 5</div>
+        </li>
+    </ul>
+
+    <script>
+        $(function() {
+            $(".item-hd").on("click", function(e) {
+                $(this).parent().addClass("on");
+                $(this).parent().siblings().removeClass("on");
+            });
+        });
+    </script>
+</body>
+</html>
