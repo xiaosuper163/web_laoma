@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <select name="prov" id="provSel"></select>
+    <select name="cities" id="citiesSel"></select>
+    <script>
+        var prov_city = [
+            {
+                prov: 'Alberta',
+                cities: ['Airdrie',
+                    'Grande Prairie',
+                    'Red Deer',
+                    'Beaumont',
+                    'Hanna',
+                    'St. Albert',
+                    'Bonnyville',
+                    'Hinton',
+                    'Spruce Grove',
+                    'Brazeau',
+                    'Irricana',
+                    'Strathcona County',
+                    'Breton',
+                    'Lacombe',
+                    'Strathmore',
+                    'Calgary',
+                    'Leduc',
+                    'Sylvan Lake',
+                    'Camrose',
+                    'Lethbridge',
+                    'Swan Hills',
+                    'Canmore',
+                    'McLennan',
+                    'Taber',
+                    'Didzbury',
+                    'Medicine Hat',
+                    'Turner Valley',
+                    'Drayton Valley',
+                    'Olds',
+                    'Vermillion',
+                    'Edmonton',
+                    'Onoway',
+                    'Wood Buffalo',
+                    'Ft. Saskatchewan',
+                    'Provost'
+                ]
+            },
+            {
+                prov: 'British Columbia',
+                cities: [
+                    'Burnaby',
+                    'Lumby',
+                    'Port Moody',
+                    'Cache Creek',
+                    'Maple Ridge',
+                    'Prince George',
+                    'Castlegar',
+                    'Merritt',
+                    'Prince Rupert',
+                    'Chemainus',
+                    'Mission',
+                    'Richmond',
+                    'Chilliwack',
+                    'Nanaimo',
+                    'Saanich',
+                    'Clearwater',
+                    'Nelson',
+                    'Sooke',
+                    'Colwood',
+                    'New Westminster',
+                    'Sparwood',
+                    'Coquitlam',
+                    'North Cowichan',
+                    'Surrey',
+                    'Cranbrook',
+                    'North Vancouver',
+                    'Terrace',
+                    'Dawson Creek',
+                    'North Vancouver',
+                    'Tumbler',
+                    'Delta',
+                    'Osoyoos',
+                    'Vancouver',
+                    'Fernie',
+                    'Parksville',
+                    'Vancouver',
+                    'Invermere',
+                    'Peace River',
+                    'Vernon',
+                    'Kamloops',
+                    'Penticton',
+                    'Victoria',
+                    'Kaslo',
+                    'Port Alberni',
+                    'Whistler',
+                    'Langley',
+                    'Port Hardy'
+                ]
+            },
+            {
+                prov: 'Manitoba',
+                cities: [
+                    'Birtle',
+                    'Flin Flon',
+                    'Swan River',
+                    'Brandon',
+                    'Snow Lake',
+                    'The Pas',
+                    'Cranberry Portage',
+                    'Steinbach',
+                    'Thompson',
+                    'Dauphin',
+                    'Stonewall',
+                    'Winnipeg'
+                ]
+            },
+            {
+                prov: 'New Brunswick',
+                cities: [
+                    'Cap-Pele',
+                    'Miramichi',
+                    'Saint John',
+                    'Fredericton',
+                    'Moncton',
+                    'Saint Stephen',
+                    'Grand Bay-Westfield',
+                    'Oromocto',
+                    'Shippagan',
+                    'Grand Falls',
+                    'Port Elgin',
+                    'Sussex',
+                    'Memramcook',
+                    'Sackville',
+                    'Tracadie-Sheila'
+                ]
+            }
+        ];
+        
+        $(function() {
+            provSelectInit();
+        });
+
+        function provSelectInit() {
+            var provOption = new Array();
+            for (var i=0; i<prov_city.length; i++) {
+                var provName = prov_city[i].prov;
+                var tempStr = "<option value='"+provName+"'>"+provName+"</option>";
+                // console.log(tempStr);
+                provOption.push(tempStr);
+            }
+
+            $("#provSel").html(provOption.join(""));
+
+            $("#provSel").change(function(e) {
+                // console.log($("#provSel").val());
+                for (var i=0; i<prov_city.length; i++) {
+                    if (prov_city[i].prov == $("#provSel").val()) {
+                        var citiesOption = new Array();
+                        for (var j=0; j<prov_city[i].cities.length; j++) {
+                            var cityName = prov_city[i].cities[j];
+                            var tempStr = "<option value='"+cityName+"'>"+cityName+"</option>";
+                            citiesOption.push(tempStr);
+                        }
+                        $("#citiesSel").html(citiesOption.join(""));
+                    }
+                }
+            });
+
+            $("#provSel").triggerHandler("change");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div id="btnDiv">
+
+        <input type="button" value="click me" id="btn">
+    </div>
+    <script>
+        $(function () {
+            var $btn = $("#btn");
+            $btn.click(function (e, a, b) {
+                console.log("btn ===> Page X: " + e.pageX + "; Page Y: " + e.pageY);
+                console.log(a + b);
+            });
+
+            $("#btnDiv").click(function (e, a, b) {
+                console.log("btnDiv ===> Page X: " + e.pageX + "; Page Y: " + e.pageY);
+            });
+
+            $btn.trigger("click");
+
+            $btn.trigger("click", [3, 4]);
+
+            // This will only trigger the event function, but not the event
+            // That is why the parent event function won't be triggered!
+            $btn.triggerHandler("click", [3, 4]);
+
+        });
+    </script>
+</body>
+
+</html>

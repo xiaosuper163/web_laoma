@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input type="button" value="click me" id="btn">
+    <script>
+        $(function() {
+            var $btn = $("#btn");
+            // console.dir($btn);
+
+            // click event in jQuery is similar to a dom2 event.
+            // it can be binded with multiple functions.
+            $btn.click(function(e) {
+                console.log("123");
+                console.log(this.value);
+            });
+            $btn.click(function(e) {
+                console.log("123456");
+
+            });
+            $btn.click(function(e) {
+                console.log("123456789");
+
+            });
+
+
+        });
+    </script>
+</body>
+</html>
