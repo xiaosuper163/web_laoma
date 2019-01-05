@@ -1,0 +1,7 @@
+sibling nodes: after before insertBefore insertAfter
+child nodes: append appendTo prepend prependTo
+wrap nodes: wrap wrapAll wrapInner
+delete child nodes: empty
+suicide: remove
+replace nodes: replaceWith replaceAll
+create nodes dynamically: $("<div>123</div>")

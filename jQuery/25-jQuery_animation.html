@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+    <style>
+        .box {
+            background-color: lightgrey;
+            border: 1px solid pink;
+            width: 300px;
+            height: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="show" value="show">
+    <input type="button" id="hide" value="hide">
+    <input type="button" id="slideUp" value="slideUp">
+    <input type="button" id="slideDown" value="slideDown">
+    <input type="button" id="slideToggle" value="slideToggle">
+    <input type="button" id="fadeIn" value="fadeIn">
+    <input type="button" id="fadeOut" value="fadeOut">
+    <input type="button" id="fadeTo" value="fadeTo">
+    <div class="box"></div>
+    <script>
+        $(function() {
+            $("#show").on("click", function() {
+                $(".box").show(1000, "swing", func);
+            });
+
+            function func() {
+                console.log("Shown.");
+            }
+
+            $("#hide").on("click", function() {
+                $(".box").hide(1000, "swing", func);
+            });
+
+            $("#slideUp").on("click", function() {
+                $(".box").slideUp();
+            });
+
+            $("#slideDown").on("click", function() {
+                $(".box").slideDown();
+            });
+
+            $("#slideToggle").on("click", function() {
+                $(".box").slideToggle();
+            });
+            
+            $("#fadeIn").on("click", function() {
+                $(".box").fadeIn();
+            });
+            
+            $("#fadeOut").on("click", function() {
+                $(".box").fadeOut();
+            });
+
+            $("#fadeTo").on("click", function() {
+                $(".box").fadeTo("slow", 0.5);
+            });
+
+        });
+    </script>
+</body>
+</html>

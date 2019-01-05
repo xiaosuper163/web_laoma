@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div id="abc">abc</div>
+    <span id="ttt">ttt</span>
+    <script>
+        $(function() {
+            $("#abc").append($("<input type='checkbox' checked>"));
+            $("<span><em> go</em>go<strong> go</strong></span>").appendTo($("#ttt"));
+            $("#abc").append(function(index, oldHTML) {
+                return "<div>==="+index+"===</div>";
+            });
+            $("div").after("<p>123</p>");
+        });
+    </script>
+</body>
+</html>

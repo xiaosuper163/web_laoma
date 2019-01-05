@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/jquery-1.12.4.js"></script>
+    <style>
+        .cls {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Turn off the light" id="lightBtn">
+    <script>
+        $(function() {
+            $("#lightBtn").on("click", function(e) {
+                if ($(this).val() == "Turn off the light") {
+                    // $("body").addClass("cls");
+                    $(this).val("Turn on the light");
+                } else {
+                    // $("body").removeClass("cls");
+                    $(this).val("Turn off the light");
+                }
+                $("body").toggleClass("cls");
+            });
+        });
+
+        // attr() prop() html() text() val() addClass() removeClass()
+        // toggleClass hasClass("cls") css()
+    </script>
+</body>
+</html>
