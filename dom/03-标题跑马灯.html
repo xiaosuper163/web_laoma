@@ -8,18 +8,13 @@
 </head>
 <body>
     <script>
-    
         setInterval(function(){
-
             var charArray = document.title.split("");
             var lastChar = charArray.pop();
-
             charArray.unshift(lastChar);
             var newTitle = charArray.join("");
             document.title = newTitle;
-
         }, 500)
-    
     </script>
 </body>
 </html>

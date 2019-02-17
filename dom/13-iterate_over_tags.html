@@ -17,8 +17,7 @@
 
     <script>
 
-        var li_list = document.querySelectorAll("li");
-        
+        var li_list = document.querySelectorAll("li"); 
         // this is not memory efficient.
         /*
         li_list.forEach(function (element, index) {
@@ -27,7 +26,6 @@
             };
         });
         */
-
         function liOnclickHandler() {
             alert(this.innerHTML);
         }
