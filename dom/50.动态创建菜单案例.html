@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+
+    </ul>
+    <script>
+    ;(function(){
+        var data = [
+            {name: "aaa", url: "/aaa.html", id: 1},
+            {name: "bbb", url: "/bbb.html", id: 2},
+            {name: "ccc", url: "/ccc/html", id: 3},
+            {name: "ddd", url: "/ddd/html", id: 4},
+            {name: "eee", url: "/eee/html", id: 5},
+        ];
+        
+        function loadMenu() {
+            var limenu = document.getElementById("menu");
+            for(var i=0; i<data.length; i++) {
+                var liElement = document.createElement("li");
+                liElement.setAttribute("id", "menu"+data[i]["id"]);
+                var limenuLink = document.createElement("a");
+                limenuLink.setAttribute("href", data[i]["url"]);
+                limenuLink.textContent = data[i]["name"];
+                liElement.appendChild(limenuLink);
+                limenu.appendChild(liElement);
+            }
+        }
+
+        loadMenu();
+    })();   
+    </script>
+</body>
+</html>
