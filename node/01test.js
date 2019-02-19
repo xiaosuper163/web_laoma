@@ -10,6 +10,11 @@ for (var i=0; i<10000; i++) {
 }
 console.timeEnd("123");
 
-setInterval(function() {
+function intervalFn() {
     console.log(Date())
-}, 500);
+}
+
+// setInterval(intervalFn, 500);
+
+let t = require("./02math.js");
+console.log(t.add(3,4));
