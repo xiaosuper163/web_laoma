@@ -20,12 +20,13 @@
         // borrow the constructor from the parent class
         function Cat(age, name) {
             Animal.call(this, age, name);
+            // Animal.apply(this, [age, name]);
         }
 
         Cat.prototype = new Animal();
         Cat.prototype.constructor = Cat;
 
-        c = new Cat(10, "Kimi");
+        var c = new Cat(10, "Kimi");
 
         c.run();
     </script>
