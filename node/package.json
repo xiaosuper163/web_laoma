@@ -13,5 +13,8 @@
     "ee"
   ],
   "author": "yabin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "string-width": "^3.0.0"
+  }
 }
